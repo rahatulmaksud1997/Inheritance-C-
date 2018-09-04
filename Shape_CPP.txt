@@ -1,0 +1,64 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+class shape{
+int dim1;
+int dim2;
+public:
+     void setDimension(int d1, int d2)
+{
+    dim1=d1;
+    dim2=d2;
+}
+int getDimension()
+{
+    return dim1,dim2;
+}
+
+};
+class Triangle:public shape{
+float triangle;
+int dim1;
+int dim2;
+public:
+    Triangle(){}
+    void setDimensions(int dim1, int dim2)
+    {
+        triangle=0.5*dim1*dim2;
+    }
+    float getArea()
+    {
+        return triangle;
+    }
+};
+class Rectangle:public shape{
+float rectangle;
+int dim1;
+int dim2;
+
+public:
+
+    Rectangle(){}
+    void setDimensions(int dim1, int dim2)
+    {
+     rectangle=dim1*dim2;
+    }
+    float getArea()
+    {
+        return rectangle;
+    }
+
+
+};
+int main()
+{
+    Triangle t;
+   Rectangle r;
+   t.setDimensions(6, 2);
+   r.setDimensions(6, 2);
+
+   cout<<"area of triangle: " << t.getArea()<< endl;
+   cout <<"area of rectangle: " <<r.getArea()<< endl;
+}
+
